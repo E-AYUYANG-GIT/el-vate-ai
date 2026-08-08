@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Oswald", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-cream: #FFF8ED;
+  --color-ink: #231F20;
+  --color-navy: #002E42;
+  --color-gold: #C28D4B;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+textarea:focus, button:focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 2px;
+}
