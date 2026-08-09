@@ -2,11 +2,14 @@ import fs from 'fs/promises';
 import { AI_CONFIG } from '../config/aiConfig.js';
 
 const VISION_PROMPT =
-  'Look at this image and identify what it is in a short phrase (5-12 words). ' +
-  'Examples: "DataCamp course completion certificate", "screenshot of a GitHub pull request", ' +
-  '"photo of a team at a conference booth". Only describe what kind of document or photo this is ' +
-  '— do not invent names, dates, or organizations you cannot actually read in the image. ' +
-  'If you genuinely cannot tell what it is, say "an uploaded image".';
+  'Look at this image carefully. If it contains visible text — like a course title, ' +
+  'certificate name, event name, or achievement — read it and include the specific ' +
+  'title or name in your answer. Respond in one short phrase (under 15 words), for example: ' +
+  '"DataCamp certificate for the course \'Working with Hugging Face\'" or ' +
+  '"screenshot of a GitHub pull request titled \'Fix login bug\'". ' +
+  'Only state text you can actually read in the image — never guess or invent a title, ' +
+  'date, or name that is not visibly present. If there is no readable text, describe ' +
+  'generally what the image shows instead.';
 
 // Best-effort: returns a short description of the image, or null if
 // anything goes wrong. Vision is a *supplement* to the user's message,

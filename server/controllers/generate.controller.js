@@ -7,6 +7,10 @@ export const generateDescription = asyncHandler(async (req, res) => {
 
   const fileContext = await extractFileContext(req.file);
 
+  if (req.file) {
+    console.log(`[generate] file: ${req.file.originalname} (${req.file.mimetype}) → context extracted: ${fileContext ? 'yes' : 'no'}`);
+  }
+
   const description = await generateWithAI({
     message,
     fileContext,
