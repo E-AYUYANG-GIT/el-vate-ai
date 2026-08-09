@@ -21,7 +21,7 @@ out/
 server/uploads/
 
 # MD
-*.md
+*.md        
 
 # Logs
 *.log

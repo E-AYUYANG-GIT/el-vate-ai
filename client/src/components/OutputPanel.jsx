@@ -7,11 +7,19 @@ function OutputPanel({ output, isGenerating, onRegenerate, copied, onCopy }) {
         Your description
       </h2>
 
-      <div className="flex-1 rounded-lg bg-white border border-[var(--color-ink)]/10 p-5 min-h-[220px] flex items-center">
+      <div
+        className="flex-1 rounded-lg bg-white border border-[var(--color-ink)]/10 p-5 min-h-[220px] flex items-center"
+        aria-live="polite"
+      >
         {isGenerating ? (
-          <p className="text-sm text-[var(--color-ink)]/50 font-[family-name:var(--font-body)]">
+          <div className="flex items-center gap-2 text-sm text-[var(--color-ink)]/50">
+            <span className="flex gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-navy)]/40 animate-bounce [animation-delay:-0.3s]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-navy)]/40 animate-bounce [animation-delay:-0.15s]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-navy)]/40 animate-bounce" />
+            </span>
             Elevating...
-          </p>
+          </div>
         ) : output ? (
           <p className="text-sm leading-relaxed whitespace-pre-wrap text-[var(--color-ink)]">
             {output}

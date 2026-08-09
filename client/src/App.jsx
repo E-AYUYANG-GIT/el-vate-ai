@@ -3,6 +3,7 @@ import Header from './components/Header'
 import InputPanel from './components/InputPanel'
 import OutputPanel from './components/OutputPanel'
 import { generateDescription, ApiError } from './services/api'
+import IntroScreen from './components/IntroScreen'
 
 function App() {
   const [message, setMessage] = useState('')
@@ -11,6 +12,11 @@ function App() {
   const [isGenerating, setIsGenerating] = useState(false)
   const [validationError, setValidationError] = useState(null)
   const [copied, setCopied] = useState(false)
+  const [showIntro, setShowIntro] = useState(true)
+
+  const handleIntroComplete = () => {
+    setShowIntro(false)
+  }
 
   const runGenerate = async () => {
     setValidationError(null)
@@ -68,8 +74,8 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {showIntro && <IntroScreen onComplete={handleIntroComplete} />}
       <Header />
-
       <main className="flex-1 px-6 pb-10 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-[45%_55%] gap-8 max-w-6xl mx-auto">
           <InputPanel
