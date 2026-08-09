@@ -1,7 +1,5 @@
 # ELVATE.ai
 
-![Banner](https://via.placeholder.com/600x150?text=ELVATE.ai+-+AI+Powered+Social+Media+Descriptions&color=gold on cream)
-
 A streamlined AI tool that transforms files into engaging social media content. Think of it as your automated creative assistant for LinkedIn, Instagram, and Twitter posts.
 
 ## Key Features
@@ -11,10 +9,11 @@ A streamlined AI tool that transforms files into engaging social media content. 
 - ✅ Rate-limited API for fair usage
 
 ## How It Works
-1. Upload a file (article, certificate, screenshot)
+1. Draft you social media post description
 2. Specify length & tone preferences
-3. Generate multiple post options
-4. Copy/paste or publish directly
+3. Upload file for additional context - Optional
+4. Generate multiple post options
+5. Copy and Paste Output
 
 ## Tech Stack
 - React.js Frontend
